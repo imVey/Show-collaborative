@@ -68,29 +68,74 @@ document
     }
   });
 
-// Animation des badges tech
+// Données des technologies & JavaScript amélioré pour des animations plus fluides
+
+const techData = {
+  nextjs: {
+    title: "Next.js",
+    description:
+      "Framework React avec rendu hybride (SSR/SSG) pour des performances optimales. Il combine le meilleur du rendu côté serveur et de la génération statique pour créer des applications web rapides et SEO-friendly.",
+  },
+  socketio: {
+    title: "Socket.io",
+    description:
+      "Bibliothèque de communication bidirectionnelle en temps réel entre client et serveur. Parfait pour créer des applications interactives comme des chats, des jeux multijoueurs ou des tableaux de bord collaboratifs.",
+  },
+  postgresql: {
+    title: "PostgreSQL",
+    description:
+      "Base de données relationnelle robuste avec support JSON et fonctionnalités avancées. Reconnue pour sa fiabilité, ses performances et sa conformité aux standards SQL, elle est idéale pour les applications critiques.",
+  },
+};
+
+function showCard(tech) {
+  const info = techData[tech];
+  if (info) {
+    const infoCard = document.getElementById("infoCard");
+
+    // Mettre à jour le contenu avant l'animation
+    document.getElementById("cardTitle").textContent = info.title;
+    document.getElementById("cardDescription").textContent = info.description;
+
+    // Ajouter la classe pour déclencher l'animation
+    infoCard.classList.add("show");
+
+    // Scroll fluide vers la card après l'animation
+    setTimeout(() => {
+      infoCard.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 500); // Délai légèrement plus long pour laisser l'animation se terminer
+  }
+}
+
+function hideCard() {
+  const infoCard = document.getElementById("infoCard");
+  infoCard.classList.remove("show");
+}
+
+// Event listeners
 document.querySelectorAll(".tech-badge").forEach((badge) => {
   badge.addEventListener("click", function () {
     const tech = this.dataset.tech;
-    let info = "";
-
-    switch (tech) {
-      case "nextjs":
-        info =
-          "Framework React avec rendu hybride (SSR/SSG) pour des performances optimales";
-        break;
-      case "socketio":
-        info =
-          "Bibliothèque de communication bidirectionnelle en temps réel entre client et serveur";
-        break;
-      case "postgresql":
-        info =
-          "Base de données relationnelle robuste avec support JSON et fonctionnalités avancées";
-        break;
-    }
-
-    alert(`${this.textContent}\n\n${info}`);
+    showCard(tech);
   });
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") hideCard();
+});
+
+document.addEventListener("click", function (e) {
+  const infoCard = document.getElementById("infoCard");
+  if (
+    infoCard.classList.contains("show") &&
+    !infoCard.contains(e.target) &&
+    !e.target.classList.contains("tech-badge")
+  ) {
+    hideCard();
+  }
 });
 
 // Effet parallaxe léger sur les éléments flottants
