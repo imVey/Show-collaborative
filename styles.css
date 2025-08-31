@@ -500,3 +500,13 @@ body {
     font-size: 1rem;
   }
 }
+
+footer {
+  background: var(--text-secondary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+#lien_linkedin {
+  color: #06d6a0;
+}
