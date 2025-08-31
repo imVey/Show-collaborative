@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Web App Collaborative</title>
+  </head>
+  <body>
+    <div class="floating-elements">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+      <div class="floating-circle circle-4"></div>
+    </div>
+
+    <div class="container">
+      <header class="header">
+        <h1 class="main-title">Web App Collaborative</h1>
+        <p class="subtitle">Plateforme collaborative en temps réel</p>
+
+        <div class="tech-stack">
+          <span class="tech-badge" data-tech="nextjs">Next.js</span>
+          <span class="tech-badge" data-tech="socketio">Socket.io</span>
+          <span class="tech-badge" data-tech="postgresql">PostgreSQL</span>
+        </div>
+      </header>
+
+      <section class="features-section">
+        <h2 class="features-title">Fonctionnalités Clés</h2>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title">Temps Réel</h3>
+            <p class="feature-description">
+              Communication instantanée avec Socket.io pour une collaboration
+              fluide et sans latence.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">🚀</span>
+            <h3 class="feature-title">Performance Next.js</h3>
+            <p class="feature-description">
+              Framework React optimisé avec rendu server-side et génération
+              statique pour une expérience ultra-rapide.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">🗄️</span>
+            <h3 class="feature-title">Base de Données Robuste</h3>
+            <p class="feature-description">
+              PostgreSQL pour une gestion fiable et scalable des données avec
+              support des transactions ACID.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">👥</span>
+            <h3 class="feature-title">Multi-utilisateurs</h3>
+            <p class="feature-description">
+              Support natif pour la collaboration simultanée avec gestion des
+              permissions et des rôles.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">🔒</span>
+            <h3 class="feature-title">Sécurisé</h3>
+            <p class="feature-description">
+              Authentification robuste, chiffrement des données et protection
+              contre les vulnérabilités courantes.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-icon">📱</span>
+            <h3 class="feature-title">Responsive</h3>
+            <p class="feature-description">
+              Interface adaptative qui fonctionne parfaitement sur desktop,
+              tablette et mobile.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section">
+        <h2 class="demo-title">Démonstration - Chat Collaboratif</h2>
+
+        <div class="chat-demo" id="chatDemo">
+          <div class="message">
+            <div class="message-author">Alice 🎨</div>
+            <div class="message-text">
+              Salut l'équipe ! J'ai terminé le design de la page d'accueil
+            </div>
+            <div class="message-time">Il y a 2 minutes</div>
+          </div>
+
+          <div class="message">
+            <div class="message-author">Bob 💻</div>
+            <div class="message-text">
+              Super ! J'ai intégré l'API PostgreSQL, on peut maintenant
+              sauvegarder les données
+            </div>
+            <div class="message-time">Il y a 1 minute</div>
+          </div>
+
+          <div class="message">
+            <div class="message-author">Charlie 🚀</div>
+            <div class="message-text">
+              Excellent travail ! Les WebSockets fonctionnent parfaitement
+            </div>
+            <div class="message-time">À l'instant</div>
+          </div>
+        </div>
+
+        <div class="input-area">
+          <input
+            type="text"
+            class="message-input"
+            placeholder="Tapez votre message..."
+            id="messageInput"
+          />
+          <button class="send-btn" onclick="sendMessage()">Envoyer</button>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
